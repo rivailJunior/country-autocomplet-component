@@ -4,6 +4,10 @@ This is a project for Deel test.
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## You can test it by using this link
+
+- [autocomplete.app](https://country-autocomplet-component.vercel.app/).
+
 ## Architecture Used
 
 - Clean and Hexagonal Architecture
