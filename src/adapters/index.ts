@@ -1,3 +1,1 @@
-/**
- * should contain the adapters to be used in the business logic
- */
+export { default as FetchAdapter } from "./fetch.adapter";
