@@ -5,11 +5,15 @@ import { CountryDAO } from "../domain";
 
 export const Main = ({ countryDao }: { countryDao: CountryDAO }) => {
   const [country, setCountry] = useState("");
-  const { countryList, getCountries } = useCountry(countryDao.getCountry);
+  const { countryList, getCountries, setCountryList } = useCountry(
+    countryDao.getCountry
+  );
 
   useEffect(() => {
     if (country.length > 2) {
       getCountries(country);
+    } else {
+      setCountryList([]);
     }
   }, [country]);
 

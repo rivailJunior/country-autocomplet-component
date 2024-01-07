@@ -24,7 +24,7 @@ const Combobox = ({ children, setValue, value }: ComboboxProps) => {
   const handleChangeInput = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const inputVal = evt.target.value;
     setValue(inputVal);
-    if (inputVal.length === 0) {
+    if (inputVal.length <= 2) {
       return comboboxHelper.toggleList("none");
     }
     comboboxHelper.toggleList("block");
