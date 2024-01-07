@@ -10,3 +10,6 @@
   width: 100%;
   background-color: rgb(228, 225, 225);
 }
+.highlight {
+  color: red;
+}

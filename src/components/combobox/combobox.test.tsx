@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Combobox } from "./combobox";
+import { OptionsTextHighlight } from "../../helper/options.helper";
 
 const dataMock = [
   {
@@ -16,7 +17,9 @@ const dataMock = [
 const ComponentFake = ({ setValue = () => {} }: { setValue?: any }) => (
   <Combobox setValue={setValue} value="">
     {dataMock.map(({ value }) => (
-      <Combobox.Option key={value} value={value} />
+      <Combobox.Option key={value} value={value}>
+        <OptionsTextHighlight text={value} textMatch={"brazil"} />
+      </Combobox.Option>
     ))}
   </Combobox>
 );
@@ -39,5 +42,8 @@ describe("Combobox", () => {
     fireEvent.change(inputElement, { target: { value: "Brazil" } });
 
     expect(setValueMock).toHaveBeenCalledWith("Brazil");
+    const highlight = screen.getAllByTestId("highlight");
+    expect(highlight).toHaveLength(1);
+    expect(highlight[0]).toHaveClass("highlight");
   });
 });

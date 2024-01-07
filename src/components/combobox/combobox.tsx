@@ -4,7 +4,7 @@ import ComboboxHelper from "../../helper/combobox.helper";
 import type { ComboOptionsProps, ComboboxProps } from "./combobox.types";
 const comboboxHelper = new ComboboxHelper("#country", "#countries");
 
-const ComboOptions = ({ value, flag }: ComboOptionsProps): JSX.Element => {
+const ComboOptions = ({ children, value, flag }: ComboOptionsProps) => {
   return (
     <li
       data-testid="custom-list-item"
@@ -14,7 +14,7 @@ const ComboOptions = ({ value, flag }: ComboOptionsProps): JSX.Element => {
         comboboxHelper.toggleList("none");
       }}
     >
-      <div>{value}</div>
+      <div>{children}</div>
       <div>{flag}</div>
     </li>
   );

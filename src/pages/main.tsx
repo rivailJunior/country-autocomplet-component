@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useCountry } from "../hooks/";
 import { Combobox } from "../components/";
 import { CountryDAO } from "../domain";
+import { OptionsTextHighlight } from "../helper/options.helper";
 
 export const Main = ({ countryDao }: { countryDao: CountryDAO }) => {
   const [country, setCountry] = useState("");
@@ -19,12 +20,14 @@ export const Main = ({ countryDao }: { countryDao: CountryDAO }) => {
 
   return (
     <Combobox value={country} setValue={setCountry}>
-      {countryList?.map((country) => (
+      {countryList?.map((item) => (
         <Combobox.Option
-          key={country.name.common}
-          value={country.name.common}
-          flag={country.flag}
-        />
+          key={item.name.common}
+          value={item.name.common}
+          flag={item.flag}
+        >
+          <OptionsTextHighlight text={item.name.common} textMatch={country} />
+        </Combobox.Option>
       ))}
     </Combobox>
   );

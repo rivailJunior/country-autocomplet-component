@@ -1,6 +1,7 @@
 type ComboOptionsProps = {
-  value: string;
+  children: React.ReactNode;
   flag?: string;
+  value: string;
 };
 
 type ComboboxProps = {
