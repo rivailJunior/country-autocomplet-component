@@ -1,3 +1,1 @@
-/**
- * should return all the components here
- */
+export { Combobox } from "./combobox/combobox";
