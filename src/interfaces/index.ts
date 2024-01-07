@@ -1,3 +1,1 @@
-/**
- * should contain the interfaces to be used in the contracts
- */
+export type { HttpClient } from "./HttpClient.interface";

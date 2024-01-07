@@ -1,10 +1,8 @@
 import "./App.css";
-import { Main } from "./pages/main";
-
 function App() {
   return (
     <div className="App">
-      <Main />
+      <h1>Auto Complete Component</h1>
     </div>
   );
 }

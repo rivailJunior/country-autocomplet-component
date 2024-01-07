@@ -1,3 +1,1 @@
-/**
- * should contain the mocks to be used in the tests
- */
+export { CountryMock } from "./country.mock";
