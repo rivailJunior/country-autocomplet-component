@@ -5,7 +5,7 @@ when you dont use the correct way to get the props.
 
 ## Context + ShouldComponentUpdate might be dangerous. Why is that?
 
-Using context all the wrapped components from the context provider will be updated when any context state changes and the ShouldComponentUpdate is a logic to define what can be updated or not. Having both, we gonna
+Using context all the wrapped components from the context provider will be updated when any context state changes and the ShouldComponentUpdate is a logic to define what can be updated or not. Having both, we gonna break the ShouldComponentUpdate behavior because Context might override these optimizations.
 
 ## Describe 3 ways to pass information from a component to its PARENT.
 
